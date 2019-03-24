@@ -102,6 +102,7 @@ CONFIG_ACTIONS_DICT = {
 "fmt_superscript",
 "fmt_subscript",
 "fmt_monospace",
+"fmt_togglewrap",
 "fmt_justify_left",
 "fmt_justify_center",
 "fmt_justify_right",
@@ -223,6 +224,7 @@ def load_menudict(dad):
 "fmt_superscript": {"sk": "format-text-superscript", "sd": _("Toggle Su_perscript Property"), "kb": None, "dn": _("Toggle Superscript Property of the Selected Text"), "cb": dad.apply_tag_superscript},
 "fmt_subscript": {"sk": "format-text-subscript", "sd": _("Toggle Su_bscript Property"), "kb": None, "dn": _("Toggle Subscript Property of the Selected Text"), "cb": dad.apply_tag_subscript},
 "fmt_monospace": {"sk": "format-text-monospace", "sd": _("Toggle _Monospace Property"), "kb": KB_CONTROL+"M", "dn": _("Toggle Monospace Property of the Selected Text"), "cb": dad.apply_tag_monospace},
+"fmt_togglewrap": {"sk": "gtk-edit", "sd": _("Toggle Line Wrapping"), "kb": None, "dn": _("Toggle Global Line Wrapping"), "cb": dad.toggle_line_wrapping},
 "handle_bull_list": {"sk": "list_bulleted", "sd": _("Set/Unset _Bulleted List"), "kb": KB_CONTROL+KB_ALT+"1", "dn": _("Set/Unset the Current Paragraph/Selection as a Bulleted List"), "cb": dad.list_bulleted_handler},
 "handle_num_list": {"sk": "list_numbered", "sd": _("Set/Unset _Numbered List"), "kb": KB_CONTROL+KB_ALT+"2", "dn": _("Set/Unset the Current Paragraph/Selection as a Numbered List"), "cb": dad.list_numbered_handler},
 "handle_todo_list": {"sk": "list_todo", "sd": _("Set/Unset _To-Do List"), "kb": KB_CONTROL+KB_ALT+"3", "dn": _("Set/Unset the Current Paragraph/Selection as a To-Do List"), "cb": dad.list_todo_handler},
@@ -474,6 +476,7 @@ get_menu_item_tuple(dad, "fmt_small"),
 get_menu_item_tuple(dad, "fmt_superscript"),
 get_menu_item_tuple(dad, "fmt_subscript"),
 get_menu_item_tuple(dad, "fmt_monospace"),
+get_menu_item_tuple(dad, "fmt_togglewrap"),
 ("submenu-end", None, None, None, None),
 ("submenu-start", _("_Justify") , "gtk-justify-center", None, None),
 get_menu_item_tuple(dad, "fmt_justify_left"),
@@ -733,6 +736,7 @@ UI_INFO = """
       <menuitem action='fmt_superscript'/>
       <menuitem action='fmt_subscript'/>
       <menuitem action='fmt_monospace'/>
+      <menuitem action='fmt_togglewrap'/>
       <separator/>
       <menuitem action='handle_bull_list'/>
       <menuitem action='handle_num_list'/>

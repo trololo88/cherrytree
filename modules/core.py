@@ -4371,6 +4371,14 @@ iter_end, exclude_iter_sel_end=True)
         if not iter_start: return
         self.apply_tag(cons.TAG_SCALE, cons.TAG_PROP_H3, iter_sel_start=iter_start, iter_sel_end=iter_end)
 
+    def toggle_line_wrapping(self, *args):
+        """Toggle line wrapping: from menu or hotkey callback"""
+        self.line_wrapping = not self.line_wrapping
+        self.apply_line_wrapping()
+
+    def apply_line_wrapping(self):
+        self.sourceview.set_wrap_mode(gtk.WRAP_WORD_CHAR if self.line_wrapping else gtk.WRAP_NONE)
+
     def apply_tag_justify_right(self, *args):
         """The Justify Right Button was Pressed"""
         if not self.is_curr_node_not_read_only_or_error(): return

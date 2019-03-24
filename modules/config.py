@@ -951,7 +951,7 @@ def preferences_tab_text_n_code(dad, vbox_all_nodes, pref_dialog):
     checkbutton_spaces_tabs.connect('toggled', on_checkbutton_spaces_tabs_toggled)
     def on_checkbutton_line_wrap_toggled(checkbutton):
         dad.line_wrapping = checkbutton.get_active()
-        dad.sourceview.set_wrap_mode(gtk.WRAP_WORD_CHAR if dad.line_wrapping else gtk.WRAP_NONE)
+        dad.apply_line_wrapping()
     checkbutton_line_wrap.connect('toggled', on_checkbutton_line_wrap_toggled)
     def on_checkbutton_auto_indent_toggled(checkbutton):
         dad.auto_indent = checkbutton.get_active()
