@@ -26,7 +26,7 @@
 #include <glibmm/base64.h>
 #include "ct_dialogs.h"
 #include "ct_list.h"
-#include <optional>
+#include <experimental/optional>
 
 namespace  {
     ct_dialogs::CtLinkEntry glb_link_entry;
@@ -155,6 +155,16 @@ void CtActions::apply_tag_monospace()
 {
     if (!_is_curr_node_not_read_only_or_error()) return;
     _apply_tag(CtConst::TAG_FAMILY, CtConst::TAG_PROP_VAL_MONOSPACE);
+}
+
+// Toggle line wrapping on-off
+void CtActions::toggle_line_wrapping()
+{
+    // plz send help :(
+    // I guess it's something like
+    // CtApp::P_ctCfg->lineWrapping = !CtApp::P_ctCfg->lineWrapping
+    // _pCtMainWin->get_text_view().set_wrap_mode(config->lineWrapping ? Gtk::WrapMode::WRAP_WORD_CHAR : Gtk::WrapMode::WRAP_NONE);
+    return
 }
 
 // Handler of the Bulleted List

@@ -133,6 +133,7 @@ void CtMenu::init_actions(CtApp *pApp, CtActions* pActions)
     _actions.push_back(CtAction{fmt_cat, "fmt_superscript", "format-text-superscript", _("Toggle Su_perscript Property"), None, _("Toggle Superscript Property of the Selected Text"), sigc::mem_fun(*pActions, &CtActions::apply_tag_superscript)});
     _actions.push_back(CtAction{fmt_cat, "fmt_subscript", "format-text-subscript", _("Toggle Su_bscript Property"), None, _("Toggle Subscript Property of the Selected Text"), sigc::mem_fun(*pActions, &CtActions::apply_tag_subscript)});
     _actions.push_back(CtAction{fmt_cat, "fmt_monospace", "format-text-monospace", _("Toggle _Monospace Property"), KB_CONTROL+"M", _("Toggle Monospace Property of the Selected Text"), sigc::mem_fun(*pActions, &CtActions::apply_tag_monospace)});
+    _actions.push_back(CtAction{fmt_cat, "fmt_togglewrap", "gtk-edit", _("Toggle Line Wrapping"), None, _("Toggle Global Line Wrapping"), sigc::mem_fun(*pActions, &CtActions::toggle_line_wrapping)});
     _actions.push_back(CtAction{fmt_cat, "handle_bull_list", "list_bulleted", _("Set/Unset _Bulleted List"), KB_CONTROL+KB_ALT+"1", _("Set/Unset the Current Paragraph/Selection as a Bulleted List"), sigc::mem_fun(*pActions, &CtActions::list_bulleted_handler)});
     _actions.push_back(CtAction{fmt_cat, "handle_num_list", "list_numbered", _("Set/Unset _Numbered List"), KB_CONTROL+KB_ALT+"2", _("Set/Unset the Current Paragraph/Selection as a Numbered List"), sigc::mem_fun(*pActions, &CtActions::list_numbered_handler)});
     _actions.push_back(CtAction{fmt_cat, "handle_todo_list", "list_todo", _("Set/Unset _To-Do List"), KB_CONTROL+KB_ALT+"3", _("Set/Unset the Current Paragraph/Selection as a To-Do List"), sigc::mem_fun(*pActions, &CtActions::list_todo_handler)});
@@ -648,6 +649,7 @@ const char* CtMenu::get_menu_ui_str()
     <menuitem action='fmt_superscript'/>
     <menuitem action='fmt_subscript'/>
     <menuitem action='fmt_monospace'/>
+    <menuitem action='fmt_togglewrap'/>
     <separator/>
     <menuitem action='handle_bull_list'/>
     <menuitem action='handle_num_list'/>

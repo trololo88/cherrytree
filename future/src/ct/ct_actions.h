@@ -22,7 +22,7 @@
 #pragma once
 #include "ct_main_win.h"
 #include "ct_dialogs.h"
-#include <optional>
+#include <experimental/optional>
 
 class CtMainWin;
 class CtActions
@@ -167,6 +167,7 @@ public:
     void apply_tag_superscript();
     void apply_tag_subscript();
     void apply_tag_monospace();
+    void toggle_line_wrapping();
     void list_bulleted_handler();
     void list_numbered_handler();
     void list_todo_handler();
