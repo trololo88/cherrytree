@@ -16,7 +16,7 @@
     <tags>cherrytree notes foss</tags>
     <summary>A hierarchical note taking application, featuring rich text and syntax highlighting, storing data in a single xml or sqlite file.</summary>
     <description>Cherrytree is a free and open source, hierarchical, note-taking application. It can store text, images, files, links, tables, and executable snippets of code. This application is under active development.</description>
-
+    <iconUrl>https://www.giuspen.com/icons_softw/cherrytree.png</iconUrl>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
