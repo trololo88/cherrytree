@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>cherrytree</id>
-    <version>0.99.24</version>
+    <version>0.99.25</version>
     <packageSourceUrl>https://github.com/trololo88/cherrytree/tree/master/windows/chocolatey</packageSourceUrl>
     <owners>ao123123</owners>
     <title>cherrytree (Install)</title>
