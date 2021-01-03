@@ -1,13 +1,13 @@
 ﻿$packageName= 'cherrytree'
 $toolsDir   = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://www.giuspen.com/software/cherrytree_0.99.25.0_setup.exe'
+$url        = 'https://www.giuspen.com/software/cherrytree_0.99.27.0_setup.exe'
 
 $packageArgs = @{
   packageName   = $packageName
   url           = $url
   silentArgs    = "/s /S /q /Q /quiet /silent /SILENT /VERYSILENT"
   softwareName  = 'Cherrytree*'
-  checksum      = '00d7dbfe5276abbad2fac76af9178d8e33f92addd7c57aa1202c36e0b466c33a'
+  checksum      = 'c2f6065624f1ce89157cfe0f7e605115003eaf2442b956215456e3ca8e19c930'
   checksumType  = 'sha256'
 }
 
